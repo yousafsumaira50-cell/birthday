@@ -163,8 +163,8 @@
 </head>
 <body>
 
-    <!-- 🎵 Background Music Audio Tag with your Catbox Link -->
-    <audio id="bgMusic" src="https://catbox.moe" loop></audio>
+    <!-- 🎵 Naya Fast Direct MP3 Music Link -->
+    <audio id="bgMusic" src="https://soundhelix.com" loop></audio>
 
     <!-- 1️⃣ STEP 1: Date of Birth Page -->
     <div id="step1" class="container">
@@ -230,10 +230,10 @@
             if (dob === "") {
                 alert("Plz pehle apni Date of Birth select karein! 🎈");
             } else {
-                // Music play karne ka code yahan active kar diya hai
+                // Music activation code
                 var music = document.getElementById("bgMusic");
                 music.play().catch(function(error) {
-                    console.log("Audio play blocked by browser, waiting for user click:", error);
+                    console.log("Audio play blocked by browser, playing on next action:", error);
                 });
 
                 document.getElementById("step1").classList.add("hidden");
