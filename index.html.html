@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Birthday Wish ✨</title>
+    <style>
+        /* Original Birthday Background Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Background par decorations */
+        body::before, body::after {
+            content: "🎈 ✨ 🎉 🍰";
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.3;
+            animation: floatBackground 6s ease-in-out infinite;
+        }
+        body::before { top: 10%; left: 10%; }
+        body::after { bottom: 10%; right: 10%; animation-delay: 3s; }
+
+        @keyframes floatBackground {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Floating Container Card */
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            max-width: 420px;
+            width: 100%;
+            border: 3px solid #ff6b81;
+            animation: floatCard 4s ease-in-out infinite;
+        }
+
+        @keyframes floatCard {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+
+        h1 {
+            color: #ff4757;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* Styling for the specific husband text in Step 3 */
+        .husband-wish {
+            display: block;
+            font-size: 15px;
+            color: #000000;
+            font-weight: normal;
+            line-height: 1.5;
+            margin-top: 10px;
+        }
+
+        /* Inputs Styling */
+        input {
+            width: 80%;
+            padding: 12px;
+            font-size: 16px;
+            border: 2px solid #ff6b81;
+            border-radius: 10px;
+            outline: none;
+            color: #333;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        /* Beautiful Button */
+        button {
+            background: linear-gradient(45deg, #ff4757, #ff6b81);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 7px 20px rgba(255, 71, 87, 0.6);
+        }
+
+        /* 🎂 CSS for 4-Layer Birthday Cake */
+        .cake-container {
+            position: relative;
+            width: 160px;
+            height: 180px;
+            margin: 0 auto 20px auto;
+        }
+
+        .layer {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 10px 10px 4px 4px;
+        }
+
+        /* Layer 1 (Bottom) */
+        .layer-1 { width: 140px; height: 35px; background: #e84393; bottom: 0; }
+        /* Layer 2 */
+        .layer-2 { width: 110px; height: 32px; background: #fdcb6e; bottom: 35px; }
+        /* Layer 3 */
+        .layer-3 { width: 80px; height: 28px; background: #00cec9; bottom: 67px; }
+        /* Layer 4 (Top) */
+        .layer-4 { width: 50px; height: 25px; background: #6c5ce7; bottom: 95px; }
+
+        /* Candle */
+        .candle {
+            position: absolute;
+            width: 8px;
+            height: 30px;
+            background: #ff7675;
+            bottom: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        /* Candle Flame */
+        .flame {
+            position: absolute;
+            width: 12px;
+            height: 18px;
+            background: #ff9f43;
+            border-radius: 50% 50% 20% 20%;
+            bottom: 150px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: burn 0.5s ease-in-out infinite alternate;
+            box-shadow: 0 0 10px #ff9f43;
+        }
+
+        @keyframes burn {
+            0% { transform: translateX(-50%) scale(1); }
+            100% { transform: translateX(-50%) scale(1.1) skewX(5deg); }
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1️⃣ STEP 1: Date of Birth Page -->
+    <div id="step1" class="container">
+        <h1>Enter the Date of Birth Dear Mujahid! 🎂😘🎂</h1>
+        <input type="date" id="dobInput">
+        <br>
+        <button onclick="goToStep2()">Next ➡️</button>
+    </div>
+
+    <!-- 2️⃣ STEP 2: Secret Code Page -->
+    <div id="step2" class="container hidden">
+        <h1>Enter the code Sir Mujahid😘! 🔐</h1>
+        <input type="text" id="codeInput" placeholder="Enter Secret Code...">
+        <br>
+        <button onclick="goToStep3()">Enter ➡️</button>
+    </div>
+
+    <!-- 3️⃣ STEP 3: Cake & Name Input Page -->
+    <div id="step3" class="container hidden">
+        <h1>Happy Birthday Ladlay😘😘😘! <span class="husband-wish">"Wishing the happiest of birthdays to the man I am lucky enough to call my future husband. You mean the world to me!"</span></h1>
+        
+        <!-- 4-Layer Animated Cake -->
+        <div class="cake-container">
+            <div class="flame"></div>
+            <div class="candle"></div>
+            <div class="layer layer-4"></div>
+            <div class="layer layer-3"></div>
+            <div class="layer layer-2"></div>
+            <div class="layer layer-1"></div>
+        </div>
+
+        <!-- Name Input Field -->
+        <input type="text" id="nameInput" placeholder="Enter Name...">
+        <br>
+        <button onclick="showFinalWish()">Next ➡️</button>
+    </div>
+
+    <!-- 4️⃣ STEP 4: Final Birthday Celebration Screen -->
+    <div id="step4" class="container hidden">
+        <h1 style="font-size: 32px; color: #ff2a6d; animation: floatCard 2s ease-in-out infinite;">🎉 HAPPY BIRTHDAY 🎉</h1>
+        <h2 id="wishingName" style="color: #6c5ce7; font-size: 28px;"></h2>
+        <p style="font-size: 16px; color: #333; line-height: 1.6; text-align: justify; margin-top: 15px;">"Happy Birthday to my ladlay💖💖🎂! As you celebrate another year, I want you to know how deeply loved and appreciated you are. I can’t wait to spend the rest of my life walking by your side. May this year bring you all the happiness and peace you deserve.<br><br>To the man who holds my heart, Happy Birthday! Thank you for being my safe haven and my biggest blessing. I pray this new chapter of your life is filled with endless success, good health, and the fulfillment of all your dreams. I love you😘."!</p>
+    </div>
+
+    <script>
+        // STEP 1: Enter Key Support
+        document.getElementById("dobInput").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") { event.preventDefault(); goToStep2(); }
+        });
+
+        // STEP 2: Enter Key Support
+        document.getElementById("codeInput").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") { event.preventDefault(); goToStep3(); }
+        });
+
+        // STEP 3: Enter Key Support
+        document.getElementById("nameInput").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") { event.preventDefault(); showFinalWish(); }
+        });
+
+        function goToStep2() {
+            var dob = document.getElementById("dobInput").value;
+            if (dob === "") {
+                alert("Plz pehle apni Date of Birth select karein! 🎈");
+            } else {
+                document.getElementById("step1").classList.add("hidden");
+                document.getElementById("step2").classList.remove("hidden");
+                document.getElementById("codeInput").focus();
+            }
+        }
+
+        function goToStep3() {
+            var code = document.getElementById("codeInput").value;
+            if (code === "19Loves13") {
+                document.getElementById("step2").classList.add("hidden");
+                document.getElementById("step3").classList.remove("hidden");
+                document.getElementById("nameInput").focus();
+            } else if (code === "") {
+                alert("Plz pehle Secret Code enter karein! 🔑");
+            } else {
+                alert("Opps! Galat code hai. Dobara koshish karein! ❌");
+            }
+        }
+
+        function showFinalWish() {
+            var userName = document.getElementById("nameInput").value;
+            
+            // Name Verification (Case-insensitive 'mujahid')
+            if (userName.trim() === "") {
+                alert("Plz naam enter karein! ✍️");
+            } else if (userName.trim().toLowerCase() !== "mujahid") {
+                alert("Opps! Yeh galat naam hai. Sahi naam enter karein! ❌");
+            } else {
+                document.getElementById("step3").classList.add("hidden");
+                document.getElementById("step4").classList.remove("hidden");
+                document.getElementById("wishingName").innerText = "✨ " + userName + " ✨";
+            }
+        }
+    </script>
+
+</body>
+</html>
