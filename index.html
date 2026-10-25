@@ -163,6 +163,9 @@
 </head>
 <body>
 
+    <!-- 🎵 Background Music Audio Tag with your Catbox Link -->
+    <audio id="bgMusic" src="https://catbox.moe" loop></audio>
+
     <!-- 1️⃣ STEP 1: Date of Birth Page -->
     <div id="step1" class="container">
         <h1>Enter the Date of Birth Dear Mujahid! 🎂😘🎂</h1>
@@ -227,6 +230,12 @@
             if (dob === "") {
                 alert("Plz pehle apni Date of Birth select karein! 🎈");
             } else {
+                // Music play karne ka code yahan active kar diya hai
+                var music = document.getElementById("bgMusic");
+                music.play().catch(function(error) {
+                    console.log("Audio play blocked by browser, waiting for user click:", error);
+                });
+
                 document.getElementById("step1").classList.add("hidden");
                 document.getElementById("step2").classList.remove("hidden");
                 document.getElementById("codeInput").focus();
@@ -248,8 +257,6 @@
 
         function showFinalWish() {
             var userName = document.getElementById("nameInput").value;
-            
-            // Name Verification (Case-insensitive 'mujahid')
             if (userName.trim() === "") {
                 alert("Plz naam enter karein! ✍️");
             } else if (userName.trim().toLowerCase() !== "mujahid") {
@@ -261,6 +268,5 @@
             }
         }
     </script>
-
 </body>
 </html>
